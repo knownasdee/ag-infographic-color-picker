@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './ColorPicker.css';
 
 const colorCodes = [
@@ -69,14 +71,33 @@ const colorCodes = [
     '#381405'
 ];
 
-const ColorPicker = () => (
-  <div className="color-picker">
-    {
-        colorCodes.map(color => 
-            <span key={color} className="color-picker__circle" style={{ backgroundColor: color }}>&nbsp;</span>
-        )
-    }
-  </div>
-);
+
+
+const ColorPicker = ({onSelectColor}) => {
+    return (
+        <div className="color-picker">
+            {
+                colorCodes.map(color => 
+                    <span 
+                        key={color} 
+                        className="color-picker__circle" 
+                        style={{ backgroundColor: color }}
+                        onClick={() => onSelectColor(color)}
+                    >
+                    &nbsp;
+                    </span>
+                )
+            }
+        </div>
+    );
+};
+
+ColorPicker.propTypes = {
+    onSelectColor: PropTypes.func
+};
+
+ColorPicker.defaultProps = {
+    onSelectColor: () => {}
+};
 
 export default ColorPicker;
