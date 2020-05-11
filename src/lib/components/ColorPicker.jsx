@@ -71,8 +71,6 @@ const colorCodes = [
     '#381405'
 ];
 
-
-
 const ColorPicker = ({onSelectColor}) => {
     return (
         <div className="color-picker">
