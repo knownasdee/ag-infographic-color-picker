@@ -1,6 +1,6 @@
 {
   "name": "ag-infographic-color-picker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
@@ -135,11 +137,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
     ]
   }
 }
