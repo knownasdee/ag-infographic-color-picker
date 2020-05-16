@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//import './ColorPickerComponent.css';
-
 const colorCodes = [
     '#EFEFEF',
     '#E5E3E3',
@@ -71,15 +69,29 @@ const colorCodes = [
     '#381405'
 ];
 
+const colorPickerStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    width: '100%',
+    padding: '5px'
+};
+
 const ColorPickerComponent = ({onSelectColor}) => {
     return (
-        <div className="color-picker">
+        <div style={colorPickerStyle}>
             {
                 colorCodes.map(color => 
                     <span 
                         key={color} 
-                        className="color-picker__circle" 
-                        style={{ backgroundColor: color }}
+                        style={{
+                            borderRadius: '50%',
+                            height: '40px',
+                            width: '40px',
+                            cursor: 'pointer',
+                            margin: '5px',
+                            boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.14)',
+                            backgroundColor: color
+                        }}
                         onClick={() => onSelectColor(color)}
                     >
                     &nbsp;
